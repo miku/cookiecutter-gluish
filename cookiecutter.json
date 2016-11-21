@@ -1,6 +1,5 @@
 {
-  "name": "xpipe",
-  "repository": "https://github.com/miku/{{ cookiecutter.name }}",
+  "name": "mel16",
   "author": "Martin Czygan",
   "author_email": "martin.czygan@gmail.com"
 }
