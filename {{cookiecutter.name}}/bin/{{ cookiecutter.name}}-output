@@ -14,7 +14,7 @@ if __name__ == '__main__':
 
     taskname = sys.argv[1]
 
-    from {{ cookiecutter.name }} import *
+    from {{ cookiecutter.name }} import g
 
     try:
         parser = CmdlineParser(sys.argv[1:])
