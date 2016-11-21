@@ -4,6 +4,6 @@
 from __future__ import print_function
 
 if __name__ == '__main__':
-    from {{ cookiecutter.name }} import g
+    from {{ cookiecutter.name }}.tasks import *
     for name in sorted(task_import_cache.keys()):
         print(name)
