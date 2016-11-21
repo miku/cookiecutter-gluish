@@ -1,6 +1,6 @@
 # coding: utf-8
 
-from task import Task
+from {{ cookiecutter.name}}.task import Task
 
 class Hello(Task):
     """
