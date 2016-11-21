@@ -2,5 +2,5 @@
   "name": "xpipe",
   "repository": "https://github.com/miku/{{ cookiecutter.name }}",
   "author": "Martin Czygan",
-  "author_email": "martin.czygan@gmail.com",
+  "author_email": "martin.czygan@gmail.com"
 }
