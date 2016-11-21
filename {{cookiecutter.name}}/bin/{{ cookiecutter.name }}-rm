@@ -1,0 +1,12 @@
+#!/bin/bash
+
+set -eu
+
+OUTPUT=$({{ cookiecutter.name }}-output "$@")
+
+if [ "$?" -ne 0 ]; then
+    echo "cannot determine task output"
+    exit 1
+else
+    rm -v "$OUTPUT"
+fi

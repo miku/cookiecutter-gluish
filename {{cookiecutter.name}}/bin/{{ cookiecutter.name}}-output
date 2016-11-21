@@ -1,0 +1,32 @@
+#!/usr/bin/env python
+# coding: utf-8
+
+from __future__ import print_function
+from luigi.cmdline_parser import CmdlineParser
+from luigi.parameter import MissingParameterException
+from luigi.task_register import TaskClassNotFoundException
+import sys
+
+if __name__ == '__main__':
+    if len(sys.argv) < 2:
+        print('{{ cookiecutter.name }}-output TASKNAME', file=sys.stderr)
+        sys.exit(1)
+
+    taskname = sys.argv[1]
+
+    from {{ cookiecutter.name }} import *
+
+    try:
+        parser = CmdlineParser(sys.argv[1:])
+        output = parser.get_task_obj().output()
+        try:
+            print(output.path)
+        except AttributeError as err:
+            print('output of task has no path', file=sys.stderr)
+            sys.exit(1)
+    except MissingParameterException as err:
+        print('missing parameter: %s' % err, file=sys.stderr)
+        sys.exit(1)
+    except TaskClassNotFoundException as err:
+        print(err, file=sys.stderr)
+        sys.exit(1)
