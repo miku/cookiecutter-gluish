@@ -16,7 +16,7 @@ class Task(BaseTask):
         Return the absolute path to the asset. `path` is the relative path
         below the data dir.
         """
-        return os.path.join(os.path.dirname(__file__), 'data', path)
+        return os.path.join(os.path.dirname(__file__), '..', 'data', path)
 
     def assets(self, path):
         """
