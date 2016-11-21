@@ -9,7 +9,14 @@ class Task(BaseTask):
     """
     Base directory.
     """
-    BASE = os.path.join(os.path.dirname(__file__), '..', 'data')
+    BASE = os.path.join(os.path.dirname(__file__), '..', 'derived')
+
+    def data(self, path):
+        """
+        Return the absolute path to the asset. `path` is the relative path
+        below the data dir.
+        """
+        return os.path.join(os.path.dirname(__file__), 'data', path)
 
     def assets(self, path):
         """
