@@ -16,7 +16,7 @@ except:
 
 install_requires = [
     'gluish>=0.2.7',
-    'luigi>=2.2',
+    'luigi==2.5.0',
 ]
 
 setup(name='{{ cookiecutter.name }}',
