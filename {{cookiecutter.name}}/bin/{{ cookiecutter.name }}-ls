@@ -2,8 +2,10 @@
 # coding: utf-8
 
 from __future__ import print_function
+from luigi.task import Register
 
 if __name__ == '__main__':
-    from {{ cookiecutter.name }}.tasks import *
-    for name in sorted(task_import_cache.keys()):
+    from {{cookiecutter.name}}.tasks import *
+    names = sorted([name for name in Register.task_names() if name[0].isupper()])
+    for name in names:
         print(name)
